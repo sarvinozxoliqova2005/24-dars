@@ -4,6 +4,7 @@ import ProductCard from "../../components/ProductCard";
 import { IoIosStar } from "react-icons/io";
 import { TiTick } from "react-icons/ti";
 import { TfiEmail } from "react-icons/tfi";
+import TestSwiper from "../../components/TestSwiper";
 
 const HomePage = () => {
   const getData = async () => {
@@ -174,7 +175,7 @@ const HomePage = () => {
       </section>
 
       <section>
-        <div className="container mx-auto  pb-[60px] max-w-[1440px] w-full">
+        {/* <div className="container mx-auto  pb-[60px] max-w-[1440px] w-full">
           <h1 className="md:text-[48px] font-bold text-center">
             OUR HAPPY CUSTOMERS
           </h1>
@@ -243,27 +244,41 @@ const HomePage = () => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
+        <TestSwiper />
       </section>
 
-      <section>
-        <div className="container mx-auto  max-w-[1440px] w-full py-[60px]">
-          <div className="bg-black  rounded-2xl h-[180px] grid sm:grid-cols-2 pt-10 pl-30 gap-10 ">
+      <section className="relative py-[60px]">
+        <div className="container mx-auto max-w-[1440px] w-full">
+          <div
+            className="absolute left-1/2 -translate-x-1/2 -bottom-[100px] 
+      bg-black rounded-2xl h-[180px] 
+      grid sm:grid-cols-2 gap-10 
+      px-10 pt-10 w-full max-w-[1200px]"
+          >
             <div>
               <h1 className="text-[40px] font-bold text-white leading-[45px]">
                 STAY UPTO DATE ABOUT <br /> OUR LATEST OFFERS
               </h1>
             </div>
+
             <div>
-              <span className="flex items-center gap-2 w-[349px] h-[48px] text-[gray] bg-white pl-6 rounded-[62px] ">
-                <TfiEmail />{" "}
+              <span
+                className="flex items-center gap-2 w-[349px] h-[48px] 
+          text-gray-400 bg-white pl-6 rounded-[62px]"
+              >
+                <TfiEmail />
                 <input
-                  className="text-[gray]"
+                  className="outline-none text-gray-500 w-full"
                   type="email"
-                  placeholder="Enter your email adress"
+                  placeholder="Enter your email address"
                 />
               </span>
-              <button className="flex items-center gap-2 w-[349px] h-[48px] flex items-center justify-center font-bold text-[20px] bg-white pl-4 rounded-[62px] mt-3">
+
+              <button
+                className="w-[349px] h-[48px] font-bold text-[20px] 
+          bg-white rounded-[62px] mt-3"
+              >
                 Subscribe to NewsLetter
               </button>
             </div>

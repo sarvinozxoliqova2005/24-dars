@@ -6,12 +6,10 @@ const Header = () => {
   return (
     <header className='bg-white fixed z-10 top-0 w-full'>
   <div className='mx-auto container pt-10 pb-5 px-4 max-w-[1440px] w-full'>
-
-    {/* Desktop */}
-    <div className='hidden md:flex items-center justify-between'>
+    <div className='flex items-center justify-between'>
       <Link to='/' className='text-[32px] font-bold'>SHOP.CO</Link>
 
-      <ul className='flex items-center gap-5'>
+      <ul className='hidden md:flex items-center gap-5'>
         <li className='text-[18px] font-bold'><a href="">Shop</a></li>
         <li className='text-[18px] font-bold'><a href="">On Sale</a></li>
         <li className='text-[18px] font-bold'><a href="">New Arrivals</a></li>
