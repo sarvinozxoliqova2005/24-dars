@@ -6,7 +6,7 @@ const ProductCard = ({ title, image, price, rating, id }) => {
   return (
     <Link to={`/products/${id}`} className="group">
       <img
-        className="max-w-[400px] w-full h-[300px] max-[600px]:max-w-[150px] max-[600px]:h-[150px] rounded-[20px] bg-[#F0EEED] object-contain p-5 transition-transform duration-300 group-hover:scale-105"
+        className="max-w-[400px] w-full h-[300px] max-[600px]:max-w-[200px] max-[600px]:h-[200px] rounded-[20px] bg-[#F0EEED] object-contain p-5 transition-transform duration-300 group-hover:scale-105"
         src={image}
         alt={title}
       />
