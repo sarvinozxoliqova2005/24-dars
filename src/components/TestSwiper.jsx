@@ -10,7 +10,7 @@ import { TiTick } from 'react-icons/ti';
 const TestSwiper = () => {
   return (
     <section className="pb-[60px]">
-      <div className="container mx-auto max-w-[1440px] w-full">
+      <div className="container mx-auto max-w-[1440px] w-full max-[600px]:px-3">
         <h1 className="md:text-[48px] font-bold text-center">
           OUR HAPPY CUSTOMERS
         </h1>

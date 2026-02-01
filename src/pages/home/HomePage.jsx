@@ -14,51 +14,72 @@ const HomePage = () => {
   return (
     <>
       <section className="relative bg-[#F2F0F1]">
-        <div className="container mx-auto max-w-[1440px] pt-[90px] flex items-center justify-between max-[600px]:flex-col px-5 pb-20">
-          <div>
-            <h1 className="text-[48px] font-bold leading-[60px]">
+        <div className="container mx-auto max-w-[1440px] pt-[90px] px-5 flex items-center justify-between max-[900px]:flex-col max-[900px]:pt-20 pb-20 gap-10">
+          <div className="flex-1">
+            <h1 className="text-[48px] max-[900px]:text-[36px] max-[600px]:text-[28px] font-bold leading-[60px] max-[900px]:leading-[44px] max-[600px]:leading-[36px]">
               FIND CLOTHES <br /> THAT MATCHES <br /> YOUR STYLE
             </h1>
-            <p className="text-[#00000099] pt-4">
+            <p className="text-[#00000099] pt-4 max-[600px]:text-sm max-[900px]:pt-2">
               Browse through our diverse range of meticulously crafted garments,
-              designed <br /> to bring out your individuality and cater to your
-              sense of style.
+              designed <br className="max-[600px]:hidden" /> to bring out your
+              individuality and cater to your sense of style.
             </p>
-            <button className="w-[210px] h-[52px] rounded-[62px] bg-black text-white mt-5">
+            <button className="w-[210px] h-[52px] max-[600px]:w-[180px] max-[600px]:h-[44px] rounded-[62px] bg-black text-white mt-5">
               Shop Now
             </button>
-
-            <div className="flex gap-10 mt-10">
+            <div className="flex flex-wrap max-[600px]:justify-center gap-10 mt-10 max-[600px]:gap-5">
               <div>
                 <h1 className="text-2xl font-bold">200+</h1>
-                <p>International Brands</p>
+                <p className="text-sm">International Brands</p>
               </div>
               <div>
                 <h1 className="text-2xl font-bold">2,000+</h1>
-                <p>High-Quality Products</p>
+                <p className="text-sm">High-Quality Products</p>
               </div>
               <div>
                 <h1 className="text-2xl font-bold">30,000+</h1>
-                <p>Happy Customers</p>
+                <p className="text-sm">Happy Customers</p>
               </div>
             </div>
           </div>
-          <img
-            className="w-[800px] h-[980px] object-cover"
-            src="/hero.jpg"
-            alt=""
-          />
+          <div className="flex-1 flex justify-center max-[900px]:mt-10">
+            <img
+              className="w-[800px] max-[1024px]:w-[600px] max-[768px]:w-[400px] max-[600px]:w-[300px] h-auto object-cover rounded-[20px]"
+              src="/hero.jpg"
+              alt="Hero Image"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="bg-black ">
-        <div className="container mx-auto w-full max-w-[1440px] px-5 ">
-          <div className="py-8 flex items-center justify-between max-[600px]:flex-col gap-10 mx-auto">
-            <img className="w-[166px] h-[33px]" src="/versace.png" />
-            <img className="w-[166px] h-[33px]" src="/zara.png" />
-            <img className="w-[166px] h-[33px]" src="/gucci.png" />
-            <img className="w-[166px] h-[33px]" src="/prada.png" />
-            <img className="w-[166px] h-[33px]" src="/calvinklein.png" />
+      <section className="bg-black">
+        <div className="container mx-auto w-full max-w-[1440px] px-5">
+          <div className="py-8 flex flex-wrap items-center justify-center gap-10 max-[600px]:gap-5">
+            <img
+              className="w-[166px] h-[33px] max-[1024px]:w-[140px] max-[768px]:w-[120px] max-[600px]:w-[100px]"
+              src="/versace.png"
+              alt="Versace"
+            />
+            <img
+              className="w-[166px] h-[33px] max-[1024px]:w-[140px] max-[768px]:w-[120px] max-[600px]:w-[100px]"
+              src="/zara.png"
+              alt="Zara"
+            />
+            <img
+              className="w-[166px] h-[33px] max-[1024px]:w-[140px] max-[768px]:w-[120px] max-[600px]:w-[100px]"
+              src="/gucci.png"
+              alt="Gucci"
+            />
+            <img
+              className="w-[166px] h-[33px] max-[1024px]:w-[140px] max-[768px]:w-[120px] max-[600px]:w-[100px]"
+              src="/prada.png"
+              alt="Prada"
+            />
+            <img
+              className="w-[166px] h-[33px] max-[1024px]:w-[140px] max-[768px]:w-[120px] max-[600px]:w-[100px]"
+              src="/calvinklein.png"
+              alt="Calvin Klein"
+            />
           </div>
         </div>
       </section>
@@ -87,14 +108,13 @@ const HomePage = () => {
       </section>
 
       <section>
-        <div className="container mx-auto px-5 max-w-[1440px] w-full bg-[#F0F0F0] rounded-2xl pb-20 my-[90px]">
-          <h1 className="text-[32px] sm:text-[40px] lg:text-[48px] font-bold uppercase text-center pt-10">
+        <div className="container mx-auto px-5 max-w-[1440px] w-full bg-[#F0F0F0] rounded-2xl pb-20 my-[90px] ">
+          <h1 className="max-[900px]:text-[32px] max-[600px]:text-[24px] text-[40px]  font-bold uppercase text-center pt-10">
             BROWSE BY DRESS STYLE
           </h1>
 
-          <div className="pt-10 lg:pt-20 px-2 sm:px-6">
-            <div className="flex flex-wrap gap-6 justify-center">
-              {/* Casual */}
+          <div className="pt-10 lg:pt-20 px-2  ">
+            <div className="flex flex-wrap gap-6 justify-center ">
               <div
                 className="flex bg-white rounded-xl shadow-md overflow-hidden relative 
                         w-full sm:w-[450px] h-[260px] sm:h-[300px]"
@@ -237,35 +257,40 @@ const HomePage = () => {
       </section>
 
       <section className="relative py-[60px]">
-        <div className="container mx-auto max-w-[1440px] w-full">
+        <div className="container mx-auto max-w-[1440px] w-full px-4">
           <div
-            className="absolute left-1/2 -translate-x-1/2 -bottom-[100px] 
-      bg-black rounded-2xl h-[180px] 
-      grid sm:grid-cols-2 gap-10 
-      px-10 pt-10 w-full max-w-[1200px]"
+            className="
+        relative sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:-bottom-[100px]
+        bg-black rounded-2xl p-6 sm:p-10
+        grid sm:grid-cols-2 gap-6 sm:gap-10
+        w-full max-w-[1200px]
+      "
           >
-            <div>
-              <h1 className="text-[40px] font-bold text-white leading-[45px]">
+            <div className="text-center sm:text-left">
+              <h1 className="text-[40px] max-[900px]:text-[32px] max-[600px]:text-[24px] font-bold text-white leading-[38px] sm:leading-[45px]">
                 STAY UPTO DATE ABOUT <br /> OUR LATEST OFFERS
               </h1>
             </div>
 
-            <div>
+            <div className="flex flex-col items-center sm:items-start gap-3">
               <span
-                className="flex items-center gap-2 w-[349px] h-[48px] 
-          text-gray-400 bg-white pl-6 rounded-[62px]"
+                className="
+            flex items-center gap-2 w-full sm:w-[349px] h-[48px]
+            text-gray-400 bg-white pl-4 sm:pl-6 rounded-[62px]
+          "
               >
-                <TfiEmail />
+                <TfiEmail className="text-gray-400" />
                 <input
-                  className="outline-none text-gray-500 w-full"
+                  className="outline-none text-gray-500 w-full bg-transparent"
                   type="email"
                   placeholder="Enter your email address"
                 />
               </span>
 
               <button
-                className="w-[349px] h-[48px] font-bold text-[20px] 
-          bg-white rounded-[62px] mt-3"
+                className="
+            w-full sm:w-[349px] h-[48px] font-bold max-[600px]:text-[16px] text-[20px] 
+            bg-white rounded-[62px]"
               >
                 Subscribe to NewsLetter
               </button>

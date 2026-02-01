@@ -11,7 +11,6 @@ const CartPage = () => {
   return (
     <>
       <section className="py-[60px]">
-        <h1 className="text-center text-[48px] max-[600px]:text-[32px] font-bold">Your Cart</h1>
        {
         cart?.length > 0 ? (
              <div className="container mx-auto max-w-[1440px] w-full grid lg:grid-cols-2 py-[30px] gap-10">
@@ -41,7 +40,7 @@ const CartPage = () => {
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-end gap-4">
+                  <div className="flex flex-col max-[600px]:col-span-3 items-end gap-4">
                     <MdDeleteForever
                       onClick={() => dispatch(removeFromCart(el.id))}
                       className="sm:text-[26px] text-gray-400 hover:text-red-500 cursor-pointer transition duration-500"
@@ -123,7 +122,7 @@ const CartPage = () => {
                 alt=""
               />
               <h1 className="text-[40px] max-[900px]:text-[32px] max-[600px]:text-[28px] font-extrabold text-center mt-3">
-                Savatingiz hozircha bosh
+                Savatingiz hozircha bo'sh
               </h1>
               <p className="text-[24px] max-[900px]:text-[20px] max-[600px]:text-[16px] font-extralight text-center mt-3">
                 Bosh sahifadan boshlang - kerakli tovarlarni qidiruv orqali <br />
