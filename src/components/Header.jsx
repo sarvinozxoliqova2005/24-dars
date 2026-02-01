@@ -1,8 +1,12 @@
 import React from 'react'
 import { FaShoppingCart } from 'react-icons/fa'
+import { useSelector } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
 
 const Header = () => {
+    const cart = useSelector((state) => state.cart);
+    console.log(cart);
+    
   return (
     <header className='bg-white fixed z-10 top-0 w-full'>
   <div className='mx-auto container pt-10 pb-5 px-4 max-w-[1440px] w-full'>
@@ -22,7 +26,12 @@ const Header = () => {
         placeholder='Search for products...'
       />
 
-      <FaShoppingCart className='text-xl' />
+      <Link to={`/cart`}>
+      <FaShoppingCart className='text-[32px] relative'/> 
+      <span className="absolute top-10 ml-8  bg-gray-300 text-lg font-bold w-7 h-7 flex items-center justify-center rounded-full shadow-md">{cart.length}
+     </span>
+     </Link>
+
     </div>
 
   </div>

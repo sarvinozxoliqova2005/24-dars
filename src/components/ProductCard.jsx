@@ -1,12 +1,12 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
-const ProductCard = ({title , image , price , rating}) => {
+const ProductCard = ({title , image , price , rating , id}) => {
     const discount = 20
     const newPrice = (
         price - (price * discount) / 100
     ).toFixed(2)
   return (
-    <div>
+    <Link to={`/products/${id}`}>
       <img
         className="max-w-[400px] w-full h-[298px] rounded-[20px] bg-[#F0EEED] object-contain p-5"
         src={image}
@@ -19,7 +19,7 @@ const ProductCard = ({title , image , price , rating}) => {
       <h1 className="line-through text-[24px] text-[gray] font-bold mt-3">${newPrice}</h1>
         <h1 className="text-[24px] w-25 h-10 flex items-center justify-center rounded-3xl text-[red] bg-[#FF33331A] font-bold mt-3">-{discount}%</h1>
       </div>
-    </div>
+    </Link>
   );
 };
 

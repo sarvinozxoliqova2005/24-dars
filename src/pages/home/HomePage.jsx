@@ -1,24 +1,16 @@
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import ProductCard from "../../components/ProductCard";
-import { IoIosStar } from "react-icons/io";
-import { TiTick } from "react-icons/ti";
 import { TfiEmail } from "react-icons/tfi";
 import TestSwiper from "../../components/TestSwiper";
+import useFetch from "../../hooks/useFetch";
 
 const HomePage = () => {
-  const getData = async () => {
-    let res = axios.get(`https://fakestoreapi.com/products`);
-    return res;
-  };
-  const { data, loading } = useQuery({
-    queryKey: ["products"],
-    queryFn: getData,
-  });
-  const products = data?.data;
-  const categories = products?.map((el) => el.category);
+  const { data, loading } = useFetch({ url: "products", key: ["products"] });
 
-  const allCatgeories = [...new Set(categories)];
+  const products = Array.isArray(data) ? data : [];
+
+  const categories = products?.map((el) => el.category) || [];
+  const allCategories = Array.from(new Set(categories));
+
   return (
     <>
       <section className="relative bg-[#F2F0F1]">
@@ -74,26 +66,22 @@ const HomePage = () => {
       <section>
         <div className="container mx-auto px-5 max-w-[1440px] w-full py-10">
           <div>
-            {allCatgeories?.map((el) => {
-              return (
-                <div>
-                  <h1 className="text-[48px] font-bold uppercase text-center pt-10">
-                    {el}
-                  </h1>
-                  <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 mt-10">
-                    {products
-                      ?.filter((product) => product.category === el)
-                      .slice(0, 4)
-                      ?.map((product) => (
-                        <ProductCard {...product} />
-                      ))}
-                  </div>
-                  <button className="max-w-[218px] h-[52px] w-full rounded-[62px] border-[2px] border-[#0000001A] cursor-pointer text-[18px] font-bold mx-auto block mt-10 ">
-                    View All
-                  </button>
+            {allCategories.map((category) => (
+              <div key={category}>
+                <h1 className="text-[48px] font-bold uppercase text-center pt-10">
+                  {category}
+                </h1>
+
+                <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 mt-10">
+                  {products
+                    ?.filter((product) => product.category === category)
+                    ?.slice(0, 4)
+                    ?.map((product) => (
+                      <ProductCard key={product.id} {...product} />
+                    ))}
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
