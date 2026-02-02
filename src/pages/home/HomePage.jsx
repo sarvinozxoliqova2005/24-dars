@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     <>
       <section className="relative bg-[#F2F0F1]">
-        <div className="container mx-auto max-w-[1440px] pt-[90px] px-5 flex items-center justify-between max-[900px]:flex-col max-[900px]:pt-20 pb-20 gap-10">
+        <div className="container mx-auto max-w-[1440px] pt-[30px] px-5 flex items-center justify-between max-[900px]:flex-col max-[900px]:pt-20 pb-20 gap-10">
           <div className="flex-1">
             <h1 className="text-[48px] max-[900px]:text-[36px] max-[600px]:text-[28px] font-bold leading-[60px] max-[900px]:leading-[44px] max-[600px]:leading-[36px]">
               FIND CLOTHES <br /> THAT MATCHES <br /> YOUR STYLE
