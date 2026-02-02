@@ -13,7 +13,7 @@ const CartPage = () => {
     <>
       <section className="">
         {cart?.length > 0 ? (
-          <div className="container mx-auto max-w-[1440px] w-full grid lg:grid-cols-2 py-[30px] gap-10">
+          <div className="container mx-auto max-w-[1440px] w-full grid lg:grid-cols-2  gap-10">
             <div className="flex flex-col gap-6 max-[600px]:px-4">
               {cart.map((el) => (
                 <div
@@ -70,7 +70,7 @@ const CartPage = () => {
             </div>
 
             <div className="max-[600px]:px-5">
-              <div className="border-[2px] border-[#0000001A] rounded-2xl px-5 py-5 max-[600px]:px-7 w-full sm:h-[550px]">
+              <div className="border-[2px] border-[#0000001A] rounded-2xl px-5 py-5 max-[600px]:px-7 w-full ">
                 <h1 className="sm:text-[24px] max-[600px]:text-[16px]  text-center font-bold mb-4">
                   Order Summary
                 </h1>
@@ -138,15 +138,15 @@ const CartPage = () => {
         )}
       </section>
 
-      <section className="relative py-[60px]">
-        <div className="container mx-auto max-w-[1440px] w-full px-4">
+       <section className="">
+        <div className="container mx-auto max-w-[1440px] w-full relative py-[60px] max-[600px]:px-3">
           <div
             className="
-              relative sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:-bottom-[100px]
-              bg-black rounded-2xl p-6 sm:p-10
-              grid sm:grid-cols-2 gap-6 sm:gap-10
-              w-full max-w-[1200px]
-            "
+        relative sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:-bottom-[100px]
+        bg-black rounded-2xl p-6 sm:p-10
+        flex items-center justify-between max-[600px]:flex-col  gap-6 sm:gap-10
+        w-full 
+      "
           >
             <div className="text-center sm:text-left">
               <h1 className="text-[40px] max-[900px]:text-[32px] max-[600px]:text-[24px] font-bold text-white leading-[38px] sm:leading-[45px]">
@@ -157,9 +157,9 @@ const CartPage = () => {
             <div className="flex flex-col items-center sm:items-start gap-3">
               <span
                 className="
-                  flex items-center gap-2 w-full sm:w-[349px] h-[48px]
-                  text-gray-400 bg-white pl-4 sm:pl-6 rounded-[62px]
-                "
+            flex items-center gap-2 w-full sm:w-[349px] h-[48px]
+            text-gray-400 bg-white pl-4 sm:pl-6 rounded-[62px]
+          "
               >
                 <TfiEmail className="text-gray-400" />
                 <input
@@ -171,8 +171,8 @@ const CartPage = () => {
 
               <button
                 className="
-                  w-full sm:w-[349px] h-[48px] font-bold max-[600px]:text-[16px] text-[20px] 
-                  bg-white rounded-[62px]"
+            w-full sm:w-[349px] h-[48px] font-bold max-[600px]:text-[16px] text-[20px] 
+            bg-white rounded-[62px]"
               >
                 Subscribe to NewsLetter
               </button>

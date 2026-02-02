@@ -44,7 +44,7 @@ const HomePage = () => {
           </div>
           <div className="flex-1 flex justify-center max-[900px]:mt-10">
             <img
-              className="w-[800px] max-[1024px]:w-[600px] max-[768px]:w-[400px] max-[600px]:w-[300px] h-auto object-cover rounded-[20px]"
+              className="max-w-[500px] w-full max-[1024px]:w-[600px] max-[768px]:w-[400px] max-[600px]:w-[300px] h-auto object-cover rounded-[20px]"
               src="/hero.jpg"
               alt="Hero Image"
             />
@@ -53,7 +53,7 @@ const HomePage = () => {
       </section>
 
       <section className="bg-black">
-        <div className="container mx-auto w-full max-w-[1440px] px-5">
+        <div className="container mx-auto w-full max-w-[1440px] px-5  ">
           <div className="py-8 flex flex-wrap items-center justify-center gap-10 max-[600px]:gap-5">
             <img
               className="w-[166px] h-[33px] max-[1024px]:w-[140px] max-[768px]:w-[120px] max-[600px]:w-[100px]"
@@ -256,14 +256,14 @@ const HomePage = () => {
         <TestSwiper />
       </section>
 
-      <section className="relative py-[60px]">
-        <div className="container mx-auto max-w-[1440px] w-full px-4">
+      <section className="">
+        <div className="container mx-auto max-w-[1440px] w-full relative py-[60px] max-[600px]:px-3">
           <div
             className="
         relative sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:-bottom-[100px]
         bg-black rounded-2xl p-6 sm:p-10
-        grid sm:grid-cols-2 gap-6 sm:gap-10
-        w-full max-w-[1200px]
+        flex items-center justify-between max-[600px]:flex-col  gap-6 sm:gap-10
+        w-full 
       "
           >
             <div className="text-center sm:text-left">

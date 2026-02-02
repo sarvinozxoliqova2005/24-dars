@@ -247,14 +247,14 @@ const SinglePage = () => {
         </div>
       </section>
 
-      <section className="relative py-[60px]">
-        <div className="container mx-auto max-w-[1440px] w-full px-4">
+        <section className="">
+        <div className="container mx-auto max-w-[1440px] w-full relative py-[60px] max-[600px]:px-3">
           <div
             className="
         relative sm:absolute sm:left-1/2 sm:-translate-x-1/2 sm:-bottom-[100px]
         bg-black rounded-2xl p-6 sm:p-10
-        grid sm:grid-cols-2 gap-6 sm:gap-10
-        w-full max-w-[1200px]
+        flex items-center justify-between max-[600px]:flex-col  gap-6 sm:gap-10
+        w-full 
       "
           >
             <div className="text-center sm:text-left">
