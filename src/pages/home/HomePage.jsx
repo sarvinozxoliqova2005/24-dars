@@ -15,7 +15,7 @@ const HomePage = () => {
   return (
     <>
       <section className="relative bg-[#F2F0F1]">
-        <div className="container mx-auto max-w-[1440px] pt-[30px] px-5 flex items-center justify-between max-[900px]:flex-col max-[900px]:pt-20 pb-20 gap-10">
+        <div className="container mx-auto max-w-[1440px] pt-[30px] px-10 flex flex-col lg:flex-row items-center justify-between gap-5 max-[900px]:pt-20 pb-20">
           <div className="flex-1">
             <h1 className="text-[48px] max-[900px]:text-[36px] max-[600px]:text-[28px] font-bold leading-[60px] max-[900px]:leading-[44px] max-[600px]:leading-[36px]">
               FIND CLOTHES <br /> THAT MATCHES <br /> YOUR STYLE
@@ -28,6 +28,7 @@ const HomePage = () => {
             <button className="w-[210px] h-[52px] max-[600px]:w-[180px] max-[600px]:h-[44px] rounded-[62px] bg-black text-white mt-5">
               Shop Now
             </button>
+
             <div className="flex flex-wrap max-[600px]:justify-center gap-10 mt-10 max-[600px]:gap-5">
               <div>
                 <h1 className="text-2xl font-bold">200+</h1>
@@ -43,19 +44,18 @@ const HomePage = () => {
               </div>
             </div>
           </div>
+
           <div className="flex-1 flex justify-center max-[900px]:mt-10">
             <img
-              className="max-w-[500px] w-full max-[1024px]:w-[600px] max-[768px]:w-[400px] max-[600px]:w-[300px] h-auto object-cover rounded-[20px]"
+              className="max-w-[500px] w-full max-[1024px]:w-[600px] max-[768px]:w-[400px] max-[600px]:w-[300px] h-[650px] object-cover rounded-[20px]"
               src="/hero.jpg"
               alt="Hero Image"
             />
           </div>
         </div>
-      </section>
 
-      <section className="bg-black">
-        <div className="container mx-auto w-full max-w-[1440px] px-5  ">
-          <div className="py-8 flex flex-wrap items-center justify-center gap-10 max-[600px]:gap-5">
+        <div className="w-full bg-black py-8 mt-[-150px] relative z-10">
+          <div className="container mx-auto max-w-[1440px] px-5 flex flex-wrap items-center justify-center gap-10 max-[600px]:gap-5">
             <img
               className="w-[166px] h-[33px] max-[1024px]:w-[140px] max-[768px]:w-[120px] max-[600px]:w-[100px]"
               src="/versace.png"
@@ -90,7 +90,7 @@ const HomePage = () => {
           <div>
             {allCategories.map((category) => (
               <div key={category}>
-                <h1 className="text-[48px] font-bold uppercase text-center pt-10">
+                <h1 className="text-[48px] max-[900px]:text-[32px] max-[600px]:text-[24px] font-bold uppercase text-center pt-10">
                   {category}
                 </h1>
 
@@ -102,7 +102,12 @@ const HomePage = () => {
                       <ProductCard key={product.id} {...product} />
                     ))}
                 </div>
-                 <Link to={`/filter`} className="border-[2px] mx-auto block w-[218px] h-[50px] rounded-full flex items-center justify-center border-[#0000001A] text-[18px] font-bold cursor-pointer mt-10">View All</Link>
+                <Link
+                  to={``}
+                  className="border-[2px] mx-auto block w-[218px] h-[50px] flex items-center justify-center max-[600px]:w-[150px] max-[600px]:h-[35px] max-[600px]:text-[16px] rounded-2xl border-[#0000001A] text-[18px] font-bold cursor-pointer mt-10"
+                >
+                  View All
+                </Link>
               </div>
             ))}
           </div>
