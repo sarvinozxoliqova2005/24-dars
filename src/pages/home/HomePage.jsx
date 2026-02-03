@@ -103,7 +103,7 @@ const HomePage = () => {
                     ))}
                 </div>
                 <Link
-                  to={``}
+                  to={`/filter`}
                   className="border-[2px] mx-auto block w-[218px] h-[50px] flex items-center justify-center max-[600px]:w-[150px] max-[600px]:h-[35px] max-[600px]:text-[16px] rounded-2xl border-[#0000001A] text-[18px] font-bold cursor-pointer mt-10"
                 >
                   View All

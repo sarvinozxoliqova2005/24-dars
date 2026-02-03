@@ -15,120 +15,125 @@ const FilterPage = () => {
 
   return (
     <>
-    <section className="relative">
-  <div className="container mx-auto flex flex-wrap gap-5 max-w-[1440px] w-full pb-[60px] px-4">
-    <button
-      onClick={() => setOpenFilter(true)}
-      className="lg:hidden fixed top-15 duration-500  z-50 p-4"
-    >
-      <BiMenu size={20} />
-    </button>
-
-    {openFilter && (
-      <div
-        onClick={() => setOpenFilter(false)}
-        className="fixed inset-0 duration-500 bg-black/40 z-40 lg:hidden"
-      />
-    )}
-    <aside className="hidden fixed lg:block w-[300px] flex-shrink-0 h-[350px] border-[2px] p-5 border-[#0000001A] rounded-[20px]">
-      <h1 className="text-[24px] font-bold text-center p-5">Filters</h1>
-      <ul className="space-y-2">
-        <li className="flex items-center gap-2 cursor-pointer text-[18px] uppercase text-[#00000099]">
-          <input
-            onClick={(e) => setCategoryValue(e.target.value)}
-            className="cursor-pointer w-[18px] h-[18px]"
-            name="category"
-            id={"all"}
-            value={"all"}
-            type="radio"
-            defaultChecked
-          />
-          <label className="cursor-pointer" htmlFor={"all"}>
-            All
-          </label>
-        </li>
-        {allCategories?.map((el) => (
-          <li
-            key={el}
-            className="flex items-center gap-2 cursor-pointer text-[18px] uppercase text-[#00000099]"
+      <section className="relative">
+        <div className="container mx-auto flex flex-wrap gap-5 max-w-[1440px] w-full pb-[60px] px-4">
+          <button
+            onClick={() => setOpenFilter(true)}
+            className="lg:hidden fixed top-15 duration-500  z-50 p-4"
           >
-            <input
-              onClick={(e) => setCategoryValue(e.target.value)}
-              className="cursor-pointer w-[18px] h-[18px]"
-              name="category"
-              id={el}
-              value={el}
-              type="radio"
+            <BiMenu size={20} />
+          </button>
+
+          {openFilter && (
+            <div
+              onClick={() => setOpenFilter(false)}
+              className="fixed inset-0 duration-500 bg-black/40 z-40 lg:hidden"
             />
-            <label className="cursor-pointer" htmlFor={el}>
-              {el}
-            </label>
-          </li>
-        ))}
-      </ul>
-    </aside>
-    <aside
-      className={`
+          )}
+          <aside className="hidden fixed lg:block w-[300px] flex-shrink-0 h-[350px] border-[2px] p-5 border-[#0000001A] rounded-[20px]">
+            <h1 className="text-[24px] font-bold text-center p-5">Filters</h1>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2 cursor-pointer text-[18px] uppercase text-[#00000099]">
+                <input
+                  onClick={(e) => setCategoryValue(e.target.value)}
+                  className="cursor-pointer w-[18px] h-[18px]"
+                  name="category"
+                  id={"all"}
+                  value={"all"}
+                  type="radio"
+                  defaultChecked
+                />
+                <label className="cursor-pointer" htmlFor={"all"}>
+                  All
+                </label>
+              </li>
+              {allCategories?.map((el) => (
+                <li
+                  key={el}
+                  className="flex items-center gap-2 cursor-pointer text-[18px] uppercase text-[#00000099]"
+                >
+                  <input
+                    onClick={(e) => setCategoryValue(e.target.value)}
+                    className="cursor-pointer w-[18px] h-[18px]"
+                    name="category"
+                    id={el}
+                    value={el}
+                    type="radio"
+                  />
+                  <label className="cursor-pointer" htmlFor={el}>
+                    {el}
+                  </label>
+                </li>
+              ))}
+            </ul>
+          </aside>
+          <aside
+            className={`
         fixed top-0 left-0 h-full w-[300px] bg-white border-r p-5 z-50
         transform  duration-500 lg:hidden
         ${openFilter ? "translate-x-0" : "-translate-x-full"}
       `}
-    >
-      <div className="flex justify-between items-center mb-5">
-        <h1 className="text-[22px] font-bold">Filters</h1>
-        <button onClick={() => setOpenFilter(false)} className="text-2xl duration-500">✕</button>
-      </div>
+          >
+            <div className="flex justify-between items-center mb-5">
+              <h1 className="text-[22px] font-bold">Filters</h1>
+              <button
+                onClick={() => setOpenFilter(false)}
+                className="text-2xl duration-500"
+              >
+                ✕
+              </button>
+            </div>
 
-      <ul className="space-y-2">
-        <li className="flex items-center gap-2 cursor-pointer text-[18px] uppercase text-[#00000099]">
-          <input
-            onClick={(e) => {
-              setCategoryValue(e.target.value);
-              setOpenFilter(false);
-            }}
-            className="cursor-pointer w-[18px] h-[18px]"
-            name="category"
-            id="all_mobile"
-            value="all"
-            type="radio"
-            defaultChecked
-          />
-          <label className="cursor-pointer" htmlFor="all_mobile">
-            All
-          </label>
-        </li>
-        {allCategories?.map((el) => (
-          <li key={el} className="flex items-center gap-2 cursor-pointer text-[18px] uppercase text-[#00000099]">
-            <input
-              onClick={(e) => {
-                setCategoryValue(e.target.value);
-                setOpenFilter(false);
-              }}
-              className="cursor-pointer w-[18px] h-[18px]"
-              name="category"
-              id={`mobile_${el}`}
-              value={el}
-              type="radio"
-            />
-            <label className="cursor-pointer" htmlFor={`mobile_${el}`}>
-              {el}
-            </label>
-          </li>
-        ))}
-      </ul>
-    </aside>
-
-    {/* PRODUCTS GRID */}
-    <div className="grid lg:grid-cols-3 grid-cols-2 xl:grid-cols-4 gap-5 flex-1 lg:pl-[330px]">
-      {categoryValue === "all"
-        ? products?.map((el) => <ProductCard key={el.id} {...el} />)
-        : products
-            ?.filter((item) => item.category === categoryValue)
-            ?.map((el) => <ProductCard key={el.id} {...el} />)}
-    </div>
-  </div>
-</section>
-
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2 cursor-pointer text-[18px] uppercase text-[#00000099]">
+                <input
+                  onClick={(e) => {
+                    setCategoryValue(e.target.value);
+                    setOpenFilter(false);
+                  }}
+                  className="cursor-pointer w-[18px] h-[18px]"
+                  name="category"
+                  id="all_mobile"
+                  value="all"
+                  type="radio"
+                  defaultChecked
+                />
+                <label className="cursor-pointer" htmlFor="all_mobile">
+                  All
+                </label>
+              </li>
+              {allCategories?.map((el) => (
+                <li
+                  key={el}
+                  className="flex items-center gap-2 cursor-pointer text-[18px] uppercase text-[#00000099]"
+                >
+                  <input
+                    onClick={(e) => {
+                      setCategoryValue(e.target.value);
+                      setOpenFilter(false);
+                    }}
+                    className="cursor-pointer w-[18px] h-[18px]"
+                    name="category"
+                    id={`mobile_${el}`}
+                    value={el}
+                    type="radio"
+                  />
+                  <label className="cursor-pointer" htmlFor={`mobile_${el}`}>
+                    {el}
+                  </label>
+                </li>
+              ))}
+            </ul>
+          </aside>
+          <div className="grid lg:grid-cols-3 grid-cols-2 xl:grid-cols-4 gap-5 flex-1 lg:pl-[330px]">
+            {categoryValue === "all"
+              ? products?.map((el) => <ProductCard key={el.id} {...el} />)
+              : products
+                  ?.filter((item) => item.category === categoryValue)
+                  ?.map((el) => <ProductCard key={el.id} {...el} />)}
+          </div>
+        </div>
+      </section>
 
       <section className="">
         <div className="container mx-auto max-w-[1440px] w-full relative py-[60px] max-[600px]:px-3">
