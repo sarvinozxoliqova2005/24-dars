@@ -7,12 +7,12 @@ const useFetch = ({ url, key }) => {
     return res?.data; 
   };
 
-  const { data, isLoading } = useQuery({
+  const { data, loading } = useQuery({
     queryKey: key,
     queryFn: getData,
   });
 
-  return { data, loading: isLoading };
+  return { data, loading: loading };
 };
 
 export default useFetch;

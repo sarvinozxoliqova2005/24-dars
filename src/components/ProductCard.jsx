@@ -11,7 +11,7 @@ const ProductCard = ({ title, image, price, rating, id }) => {
         alt={title}
       />
 
-      <h1 className="text-[20px] max-[600px]:text-[14px] font-bold line-clamp-2 mt-3">
+      <h1 className="text-[20px] max-[600px]:text-[14px] font-bold line-clamp-1 mt-3">
         {title}
       </h1>
 

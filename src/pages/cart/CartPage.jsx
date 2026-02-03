@@ -14,11 +14,11 @@ const CartPage = () => {
       <section className="">
         {cart?.length > 0 ? (
           <div className="container mx-auto max-w-[1440px] w-full grid lg:grid-cols-2  gap-10">
-            <div className="flex flex-col gap-6 max-[600px]:px-4">
+            <div className="flex flex-col gap-6 max-[600px]:px-5 max-h-[545px] rounded-2xl overflow-auto">
               {cart.map((el) => (
                 <div
                   key={el.id}
-                  className="flex items-center justify-between p-6 rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition"
+                  className="flex items-center  justify-between p-6  rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition"
                 >
                   <div className="flex items-center gap-5">
                     <div className="w-[100px] h-[100px] flex items-center justify-center rounded-2xl ">
@@ -42,7 +42,7 @@ const CartPage = () => {
                   <div className="flex flex-col max-[600px]:col-span-3 items-end gap-4">
                     <MdDeleteForever
                       onClick={() => dispatch(removeFromCart(el.id))}
-                      className="sm:text-[26px] text-gray-400 hover:text-red-500 cursor-pointer transition duration-500"
+                      className="text-[26px] text-red-500 cursor-pointer transition duration-500"
                     />
 
                     <div className="flex items-center gap-2 max-[600px]:gap-4 bg-[#F0F0F0] rounded-[62px] px-2 py-1">
@@ -81,10 +81,10 @@ const CartPage = () => {
                       key={el.id}
                       className="flex justify-between items-center text-sm mb-2 border-b border-gray-500 py-2"
                     >
-                      <span className="sm:text-[18px] max-[600px]:text-[12px]  text-gray-500 font-medium leading-5 line-clamp-2">
+                      <span className="sm:text-[18px] max-[600px]:text-[12px]  text-gray-500 font-medium leading-5 line-clamp-3">
                         {el.title}
                         <h1 className="sm:text-center text-gray-400">
-                          x{el.qty}
+                          x:{el.qty}
                         </h1>
                       </span>
                       <span className="text-[20px] max-[600px]:text-[12px] font-bold">

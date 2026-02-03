@@ -1,11 +1,13 @@
-import ProductCard from "../../components/ProductCard";
 import { TfiEmail } from "react-icons/tfi";
+import ProductCard from "../../components/ProductCard";
 import TestSwiper from "../../components/TestSwiper";
 import useFetch from "../../hooks/useFetch";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const { data, loading } = useFetch({ url: "products", key: ["products"] });
+  
+
 
   const products = Array.isArray(data) ? data : [];
 
@@ -104,7 +106,7 @@ const HomePage = () => {
                 </div>
                 <Link
                   to={`/filter`}
-                  className="border-[2px] mx-auto block w-[218px] h-[50px] flex items-center justify-center max-[600px]:w-[150px] max-[600px]:h-[35px] max-[600px]:text-[16px] rounded-2xl border-[#0000001A] text-[18px] font-bold cursor-pointer mt-10"
+                  className="border-[2px] mx-auto block w-[218px] h-[50px] flex items-center justify-center max-[600px]:w-[150px] max-[600px]:h-[35px] max-[600px]:text-[16px] rounded-full border-[#0000001A] text-[18px] font-bold cursor-pointer mt-10"
                 >
                   View All
                 </Link>

@@ -78,7 +78,7 @@
 // };
 
 // export default SinglePage;
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { IoIosStar } from "react-icons/io";
 import { TiTick } from "react-icons/ti";
@@ -221,7 +221,7 @@ const SinglePage = () => {
               ))}
           </div>
 
-          <button className="w-[260px] h-[60px] rounded-[62px] border-[2px] border-[#0000001A] text-[20px] font-bold cursor-pointer mx-auto block">
+          <button className="w-[260px] h-[60px] max-[600px]:w-[220px] max-[600px]:h-[45px] max-[600px]:text-[16px] rounded-[62px] border-[2px] border-[#0000001A] text-[20px] font-bold cursor-pointer mx-auto block">
             Load More Reviews
           </button>
         </div>
@@ -242,6 +242,12 @@ const SinglePage = () => {
                     <ProductCard key={product.id} {...product} />
                   ))}
               </div>
+               <Link
+                  to={`/filter`}
+                  className="border-[2px] mx-auto block w-[218px] h-[50px] flex items-center justify-center max-[600px]:w-[150px] max-[600px]:h-[35px] max-[600px]:text-[16px] rounded-full border-[#0000001A] text-[18px] font-bold cursor-pointer mt-10"
+                >
+                  View All
+                </Link>
             </div>
           ))}
         </div>
