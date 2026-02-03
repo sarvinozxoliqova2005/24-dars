@@ -2,6 +2,7 @@ import ProductCard from "../../components/ProductCard";
 import { TfiEmail } from "react-icons/tfi";
 import TestSwiper from "../../components/TestSwiper";
 import useFetch from "../../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const { data, loading } = useFetch({ url: "products", key: ["products"] });
@@ -101,6 +102,7 @@ const HomePage = () => {
                       <ProductCard key={product.id} {...product} />
                     ))}
                 </div>
+                 <Link to={`/filter`} className="border-[2px] mx-auto block w-[218px] h-[50px] rounded-full flex items-center justify-center border-[#0000001A] text-[18px] font-bold cursor-pointer mt-10">View All</Link>
               </div>
             ))}
           </div>
